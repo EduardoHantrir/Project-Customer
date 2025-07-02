@@ -1,0 +1,93 @@
+/* === LAYOUT DO FORMULÁRIO === */
+.form-layout {
+  width: 100%;
+  max-width: 550px;
+  background-color: white;
+  border-radius: 10px;
+  padding: 30px 25px;
+  margin: 20px auto;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  box-sizing: border-box;
+}
+
+/* === TÍTULO === */
+.form-header {
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.form-header h2 {
+  font-size: 1.8rem;
+  color: #333;
+  margin: 0;
+}
+
+/* === CONTAINER DOS INPUTS === */
+.forms-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* === COMPONENTE INPUT === */
+app-input-component {
+  flex: 1 1 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+/* Telas médias: dois campos por linha */
+@media (min-width: 600px) {
+  app-input-component {
+    flex: 1 1 calc(50% - 20px);
+    max-width: calc(50% - 20px);
+  }
+}
+
+/* === ÁREA DE ADIÇÃO === */
+.form-add {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-around;
+  color: #413A33;
+}
+
+.btn-endereco,
+.btn-telefone {
+  font-size: small;
+  cursor: pointer;
+}
+
+/* === BOTÕES === */
+.forms-buttons {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.btn-form {
+  background-color: #12fae7;
+  color: black;
+  border: none;
+  padding: 12px 35px;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  max-width: 100%;
+}
+
+.btn-form:hover {
+  background-color: #0ed6c8;
+}
+
+.btn-form:active {
+  transform: scale(0.98);
+  box-shadow: none;
+}

@@ -1,0 +1,24 @@
+<main>
+    <div class="form-endereco">
+        <button (click)="sair()" class="btn-sair">x</button>
+        <h2 class="form-titulo">Endereco</h2>
+        <div class="form-inputs">
+            <app-input-component type="text" name="CEP" placeholder="00000-000" label="CEP" [readonly]="false"
+                [value]="cep" (valueChange)="onCepChange($event)" />
+
+            <app-input-component type="text" name="logradouro" placeholder="Logradouro" label="Logradouro"
+                [readonly]="true" [value]="logradouro" />
+
+            <app-input-component type="text" name="Numero" placeholder="00" label="Numero" [readonly]="false" />
+
+            <app-input-component type="text" name="Complemento" placeholder="Complemento" label="Complemento"
+                [readonly]="false" [value]="complemento" />
+
+            <app-input-component type="text" name="Bairro" placeholder="Bairro" label="Bairro" [readonly]="true"
+                [value]="bairro" />
+
+            <app-input-component type="text" name="Uf" placeholder="UF" label="UF" [readonly]="true" [value]="uf" />
+        </div>
+        <button (click)="salvarEndereco()" class="btn-salvar">Salvar</button>
+    </div>
+</main>
