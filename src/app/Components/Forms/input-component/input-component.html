@@ -2,8 +2,6 @@
   <label *ngIf="label">
     {{ label }}
   </label>
-  <input [type]="type" [placeholder]="placeholder" [name]="name" [ngModel]="value"
-  (ngModelChange)="onValueChange($event)" [required]="required" [disabled]="disabled" [readonly]="readonly"
-  (blur)="onBlur()" class="custom-input" />
+  <input [type]="type" [placeholder]="placeholder" [name]="name" [value]="value" (input)="onValueChange($event)"
+    [required]="required" [disabled]="disabled" [readonly]="readonly" (blur)="onBlur()" class="custom-input" />
 </main>
-  

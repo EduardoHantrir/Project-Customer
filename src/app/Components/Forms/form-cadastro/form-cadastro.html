@@ -1,22 +1,25 @@
-<form class="form-layout">
+<form (ngSubmit)="register()" class="form-layout">
     <div class="form-header">
         <h2>Cadastro</h2>
     </div>
 
     <div class="forms-container">
-        <app-input-component type="text" placeholder="Digite seu nome" name="nome" label="Nome" [required]="true">
+        <app-input-component type="text" placeholder="Digite seu nome" name="nome" label="Nome" [(ngModel)]="nome"
+            [required]="true">
         </app-input-component>
 
-        <app-input-component type="email" placeholder="usuario@user.com" name="email" label="Email" [required]="true">
+        <app-input-component type="email" placeholder="usuario@user.com" name="email" label="Email" [(ngModel)]="email"
+            [required]="true">
         </app-input-component>
 
         <app-input-component type="password" placeholder="Digite sua senha" name="senha" label="Senha"
-            [required]="true">
+            [(ngModel)]="senha" [required]="true">
         </app-input-component>
 
         <app-input-component type="password" placeholder="Repita sua senha" name="senhaC" label="Confirme sua senha"
-            [required]="true">
+            [(ngModel)]="confirmarSenha" [required]="true">
         </app-input-component>
+
 
         <div class="form-add">
             <a class="btn-endereco" (click)="mostrarEndereco()">
@@ -26,9 +29,13 @@
                 Adicionar Telefone
             </a>
         </div>
+
+        <div class="label-erro" *ngIf="senha !== confirmarSenha && confirmarSenha">
+            <p>As senhas não coincidem.</p>
+        </div>
     </div>
 
     <div class="forms-buttons">
-        <button type="submit" class="btn-form">Cadastrar</button>
+        <button type="submit" class="btn-form" [disabled]="senha !== confirmarSenha">Cadastrar</button>
     </div>
 </form>
