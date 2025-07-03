@@ -4,8 +4,8 @@
   max-width: 550px;
   background-color: white;
   border-radius: 10px;
-  padding: 30px 25px;
-  margin: 20px auto;
+  padding: 25px 0px;
+  margin: 20px 0px;
   display: grid;
   grid-template-rows: auto 1fr auto;
   box-sizing: border-box;
@@ -50,11 +50,14 @@ app-input-component {
 
 /* === ÁREA DE ADIÇÃO === */
 .form-add {
+  position: relative;
   display: flex;
   width: 100%;
   align-items: center;
+  flex-wrap: wrap;
   justify-content: space-around;
   color: #413A33;
+  top: -15px
 }
 
 .btn-endereco,

@@ -11,7 +11,6 @@ import { FormsModule } from '@angular/forms';
 })
 export class InputComponent {
   @Input() label: string = '';
-  @Input() pattern: string = '';
   @Input() placeholder: string = '';
   @Input() type: string = 'text';
   @Input() name: string = '';

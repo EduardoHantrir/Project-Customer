@@ -10,6 +10,7 @@ import { CommonModule } from '@angular/common';
 })
 export class FormCadastro {
   @Output() enderecoToggle = new EventEmitter<void>();
+  @Output() telefoneToggle = new EventEmitter<void>();
 
   mostrarEndereco() {
     this.enderecoToggle.emit();

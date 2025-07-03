@@ -12,6 +12,9 @@ import { FormEndereco } from './Components/Forms/form-endereco/form-endereco';
   imports: [CommonModule, FormLogin, FormCadastro, FormEndereco]
 })
 export class App {
+toggleTelefone() {
+throw new Error('Method not implemented.');
+}
   showLogin = false;    // false = cadastro, true = login
   showEndereco = false;
   showLeft = true;

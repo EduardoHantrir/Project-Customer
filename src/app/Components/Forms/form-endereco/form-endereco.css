@@ -60,3 +60,9 @@ main{
     cursor: pointer;
 }
 
+.btn-salvar {
+    cursor:crosshair;
+    font-size: 1.2rem;
+    border: none;
+    background-color: white;
+}
