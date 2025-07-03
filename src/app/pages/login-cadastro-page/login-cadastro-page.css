@@ -18,7 +18,7 @@ main {
     background-size: cover; /* Cobre toda a área */
     background-position: center; /* Centraliza a imagem */
     background-repeat: no-repeat; /* Não repete a imagem */
-    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
 }
 
 /* Botões */
@@ -107,14 +107,41 @@ app-form-cadastro {
 }
 
 .form-endereco>a {
-    background-color: rgba(0, 0, 0, 0.05);
+    background-color: rgba(0, 0, 0, 0.2);
     width: 100%;
     height: 100%;
 }
 
-app-form-endereco {
+.form-telefone {
+    position: absolute;
+    display: flex;
+    z-index: 5;
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease-in-out;
+}
+
+.form-telefone>div {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.form-telefone>a {
+    background-color: rgba(0, 0, 0, 0.2);
+    width: 100%;
+    height: 100%;
+}
+
+app-form-endereco, app-form-telefone {
     display: flex;
     position: absolute;
     justify-content: center;
     z-index: 10;
+    max-width: 45%;
 }

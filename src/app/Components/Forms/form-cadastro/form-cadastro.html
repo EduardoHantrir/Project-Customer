@@ -22,10 +22,10 @@
 
 
         <div class="form-add">
-            <a class="btn-endereco" (click)="mostrarEndereco()">
+            <a class="btn-endereco" [ngClass]="{ preenchido: enderecoPreenchido }" (click)="mostrarEndereco()">
                 Adicionar Endereço
             </a>
-            <a class="btn-telefone">
+            <a class="btn-telefone" [ngClass]="{ preenchido: telefonePreenchido }" (click)="mostrarTelefone()">
                 Adicionar Telefone
             </a>
         </div>

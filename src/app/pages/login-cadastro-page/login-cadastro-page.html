@@ -4,8 +4,10 @@
     <a (click)="showForm('login')" class="btn-login form-switch">Cadastro</a>
 
     <div class="form-slider" [ngStyle]="getPosition()">
-      <div class="form-slider-inner" [ngClass]="{ 'slide-cadastro': !showLogin }" >
-        <app-form-cadastro (enderecoToggle)="toggleEndereco()" (telefoneToggle)="toggleTelefone()"></app-form-cadastro>
+      <div class="form-slider-inner" [ngClass]="{ 'slide-cadastro': !showLogin }">
+        <app-form-cadastro (enderecoToggle)="toggleEndereco()" (telefoneToggle)="toggleTelefone()"
+          [endereco]="dadosEndereco" [telefone]="dadosTelefone" [enderecoPreenchido]="enderecoPreenchido"
+          [telefonePreenchido]="telefonePreenchido"></app-form-cadastro>
         <app-form-login></app-form-login>
       </div>
     </div>
@@ -13,6 +15,12 @@
 
   <div class="form-endereco" *ngIf="showEndereco">
     <a (click)="closeEndereco()"></a>
-    <app-form-endereco (closeEnderecoEmitter)="toggleEndereco()"></app-form-endereco>
+    <app-form-endereco *ngIf="showEndereco" (closeEnderecoEmitter)="toggleEndereco()"
+      (enderecoSalvo)="receberEndereco($event)"></app-form-endereco>
+  </div>
+  <div class="form-telefone" *ngIf="showTelefone">
+    <a (click)="closeTelefone()"></a>
+    <app-form-telefone *ngIf="showTelefone" (closeTelefoneEmitter)="toggleTelefone()"
+      (telefoneSalvo)="receberTelefone($event)"></app-form-telefone>
   </div>
 </main>

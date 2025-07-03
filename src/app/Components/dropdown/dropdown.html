@@ -1,0 +1,11 @@
+<div class="dropdown">
+    <label for="tipoTelefone">Tipo do telefone</label>
+    <div class="dropdown-selected" (click)="toggleDropdown()">
+        {{ tipoTelefoneSelecionado || 'Tipo do telefone' }}
+    </div>
+    <ul class="dropdown-options" *ngIf="dropdownAberto">
+        <li (click)="selecionar('Residencial')">Residencial</li>
+        <li (click)="selecionar('Comercial')">Comercial</li>
+        <li (click)="selecionar('Pessoal')">Pessoal</li>
+    </ul>
+</div>

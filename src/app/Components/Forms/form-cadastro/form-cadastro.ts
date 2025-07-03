@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output, SimpleChanges } from '@angular/core';
 import { InputComponent } from "../input-component/input-component";
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
@@ -14,6 +14,12 @@ import { Router } from '@angular/router';
 export class FormCadastro {
   @Output() enderecoToggle = new EventEmitter<void>();
   @Output() telefoneToggle = new EventEmitter<void>();
+  @Output() cadastrado = new EventEmitter<void>();
+
+  @Input() endereco: any;
+  @Input() telefone: any;
+  @Input() enderecoPreenchido = false;
+  @Input() telefonePreenchido = false;
 
   nome = "";
   email = "";
@@ -26,6 +32,7 @@ export class FormCadastro {
   Logradouro = "";
   Numero = "";
   Complemento = "";
+  bairro = "";
   Cidade = "";
   Uf = "";
   Estado = "";
@@ -33,8 +40,24 @@ export class FormCadastro {
 
   constructor(private authService: Auth, private router: Router) { }
 
-  @Output() cadastrado = new EventEmitter<void>();
-    
+  ngOnChanges(changes: SimpleChanges): void {
+    if (changes['endereco'] && this.endereco) {
+      this.Logradouro = this.endereco.logradouro || "";
+      this.Numero = this.endereco.numero || "";
+      this.Complemento = this.endereco.complemento || "";
+      this.bairro = this.endereco.bairro || "";
+      this.Cidade = this.endereco.cidade || "";
+      this.Uf = this.endereco.uf || "";
+      this.Estado = this.endereco.estado || "";
+      this.Cep = this.endereco.cep || "";
+    }
+
+    if (changes['telefone'] && this.telefone) {
+      this.numeroTelefone = this.telefone.telefoneNum || "";
+      this.tipoTelefone = this.telefone.tipoTelefone || "";
+    }
+  }
+
   register() {
     const customer = {
       nome: this.nome,
@@ -48,7 +71,7 @@ export class FormCadastro {
         logradouro: this.Logradouro,
         numero: this.Numero,
         complemento: this.Complemento,
-        bairro: "",
+        bairro: this.bairro,
         cidade: this.Cidade,
         uf: this.Uf,
         estado: this.Estado,
@@ -70,6 +93,10 @@ export class FormCadastro {
 
   mostrarEndereco() {
     this.enderecoToggle.emit();
+  }
+
+  mostrarTelefone() {
+    this.telefoneToggle.emit();
   }
 
   onSubmit() {

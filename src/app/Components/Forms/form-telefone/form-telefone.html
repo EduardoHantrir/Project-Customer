@@ -1,0 +1,13 @@
+<main>
+    <form class="form-telefone">
+        <button (click)="sair()" class="btn-sair">x</button>
+        <h2 class="form-titulo">Telefone</h2>
+        <div class="form-inputs">
+            <app-input-component type="text" name="telefone" placeholder="(12) 34567-8901" label="Telefone"
+                [(ngModel)]="telefoneNum" />
+
+            <app-dropdown></app-dropdown>
+        </div>
+        <button (click)="salvarTelefone()" class="btn-salvar">Salvar</button>
+    </form>
+</main>

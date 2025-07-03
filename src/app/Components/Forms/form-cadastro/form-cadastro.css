@@ -102,3 +102,9 @@ app-input-component {
   transform: scale(0.98);
   box-shadow: none;
 }
+
+.btn-endereco.preenchido,
+.btn-telefone.preenchido {
+
+  color: #55CEF2; 
+}

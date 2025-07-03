@@ -1,4 +1,4 @@
-main {
+nav {
     position: relative;
     display: flex;
     z-index: 5;
@@ -9,7 +9,7 @@ main {
     align-self: center;
 }
 
-.form-endereco {
+.form-telefone {
     display: grid;
     z-index: 5;
     max-width: 100%;
@@ -29,7 +29,7 @@ main {
 
 .form-inputs {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
@@ -50,7 +50,6 @@ main {
 
 .btn-sair {
     display: flex;
-    grid-row: 3;
     position: absolute;
     top: 15px;
     right: 15px;
@@ -62,8 +61,66 @@ main {
 }
 
 .btn-salvar {
+    grid-row: 3;
     cursor: pointer;
     font-size: 1.2rem;
     border: none;
     background-color: white;
+    margin-bottom: 15px;
+}
+
+.dropdown {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    width: 100%;
+    max-width: 300px;
+    height: 100%;
+    text-align: left;
+    justify-content: space-between;
+}
+
+.dropdown label {
+    position: relative;
+    display: flex;
+    padding-left: 5%;
+    font-size: 1.2rem;
+    color: #222222;
+    max-width: fit-content;
+}
+
+.dropdown-selected {
+    display: flex;
+    position: relative;
+    bottom: 0;
+    max-width: 300px;
+    padding: 10px;
+    margin: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.dropdown-options {
+    list-style: none;
+    margin: 0 10px;
+    padding: 0;
+    border: 1px solid #ccc;
+    border-top: none;
+    border-radius: 0 0 4px 4px;
+    position: absolute;
+    width: calc(100% - 20px);
+    background-color: #fff;
+    z-index: 10;
+}
+
+.dropdown-options li {
+    padding: 10px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.dropdown-options li:hover {
+    background-color: #f0f0f0;
 }

@@ -1,25 +1,33 @@
 <main>
-    <div class="form-endereco">
+    <form class="form-endereco">
         <button (click)="sair()" class="btn-sair">x</button>
         <h2 class="form-titulo">Endereco</h2>
         <div class="form-inputs">
             <app-input-component type="text" name="CEP" placeholder="00000-000" label="CEP" [readonly]="false"
-                />
+                [(ngModel)]="cep" (ngModelChange)="onCepChange($event)" />
 
             <app-input-component type="text" name="logradouro" placeholder="Logradouro" label="Logradouro"
-                [readonly]="true" />
+                [readonly]="true" [(ngModel)]="logradouro" />
 
-            <app-input-component type="text" name="Numero" placeholder="00" label="Numero" [readonly]="false" />
+            <app-input-component type="text" name="Numero" placeholder="00" label="Numero" [readonly]="false"
+                [(ngModel)]="numero" />
 
             <app-input-component type="text" name="Complemento" placeholder="Complemento" label="Complemento"
-                [readonly]="false" />
+                [readonly]="false" [(ngModel)]="complemento" />
 
             <app-input-component type="text" name="Bairro" placeholder="Bairro" label="Bairro" [readonly]="true"
-                />
+                [(ngModel)]="bairro" />
 
-            <app-input-component type="text" name="Uf" placeholder="UF" label="UF" [readonly]="true" />
+            <app-input-component type="text" name="Estado" placeholder="Estado" label="Estado" [readonly]="true"
+                [(ngModel)]="estado" />
+
+            <app-input-component type="text" name="Uf" placeholder="UF" label="UF" [readonly]="true" [(ngModel)]="uf" />
+
+            <app-input-component type="text" name="Cidade" placeholder="Cidade" label="Cidade" [readonly]="true"
+                [(ngModel)]="cidade" />
+
         </div>
-        
+
         <button (click)="salvarEndereco()" class="btn-salvar">Salvar</button>
-    </div>
+    </form>
 </main>

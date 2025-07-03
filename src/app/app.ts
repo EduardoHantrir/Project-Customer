@@ -1,3 +1,4 @@
+import { HttpClientModule } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
@@ -6,7 +7,7 @@ import { RouterModule } from '@angular/router';
   standalone: true,
   templateUrl: './app.html',
   styleUrl: './app.css',
-  imports: [RouterModule]
+  imports: [RouterModule, HttpClientModule]
 })
 
 
