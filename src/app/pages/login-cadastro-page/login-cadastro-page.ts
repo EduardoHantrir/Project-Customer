@@ -6,6 +6,7 @@ import { FormEndereco } from '../../Components/Forms/form-endereco/form-endereco
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { AuthInterceptor } from '../../Services/auth.interceptor';
 import { FormTelefone } from "../../Components/Forms/form-telefone/form-telefone";
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login-cadastro-page',
@@ -68,6 +69,15 @@ export class LoginCadastroPage {
   receberTelefone(telefone: any) {
     this.dadosTelefone = telefone;
     this.telefonePreenchido = true;
+  }
+
+  constructor (private router: Router){}
+
+  ngOnInit(){
+    const token = localStorage.getItem('Token');
+    if (token) {
+      this.router.navigate(['/home']);
+    }
   }
 
 }

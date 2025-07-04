@@ -43,6 +43,7 @@ export class FormTelefone {
       tipoTelefone: tipoMap[this.tipoTelefoneSelecionado] || 0
     };
 
+    console.log(telefone)
     this.telefoneSalvo.emit(telefone);
     this.sair();
   }

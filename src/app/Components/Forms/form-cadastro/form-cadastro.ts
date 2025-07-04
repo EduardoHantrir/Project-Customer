@@ -79,6 +79,8 @@ export class FormCadastro {
       }
     };
 
+    console.log(customer);
+    
     this.authService.cadastro(customer).subscribe({
       next: (res: any) => {
         localStorage.setItem('token', res.token);
